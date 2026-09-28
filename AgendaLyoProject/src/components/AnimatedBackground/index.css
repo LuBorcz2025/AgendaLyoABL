@@ -1,0 +1,58 @@
+.animated-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.snacks-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.snack {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: var(--op);
+
+    animation:
+        snackFloat var(--dur) ease-in-out var(--d1) infinite,
+        snackRotate calc(var(--dur) * 1.5) ease-in-out var(--d1) infinite alternate;
+}
+
+@keyframes snackFloat {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(20px, -25px, 0);
+    }
+
+    50% {
+        transform: translate3d(-15px, -45px, 0);
+    }
+
+    75% {
+        transform: translate3d(25px, -20px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes snackRotate {
+    0% {
+        rotate: calc(var(--rot) * -1);
+    }
+
+    100% {
+        rotate: var(--rot);
+    }
+}

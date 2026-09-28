@@ -1,4 +1,5 @@
 import './index.css'
+import { Link } from 'react-router-dom';
 
 export default function CadastroUsuario() {
     return (
@@ -20,9 +21,15 @@ export default function CadastroUsuario() {
                 placeholder="Senha"
             />
 
-            <button>
-                Cadastrar
-            </button>
+            <div className='div-buttons'>
+                <button>
+                    Cadastrar
+                </button>
+
+                <Link to="/login">
+                    Voltar
+                </Link>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,249 @@
+.login-page {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 4vw;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(160deg, #0e4e8d 0%, #0a3877 55%, #051a3a 100%);
+}
+
+/* ---------- Mascote ---------- */
+
+.login-mascot {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    width: clamp(150px, 24vw, 600px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3aa9e0;
+    display: grid;
+    place-items: center;
+}
+
+.login-mascot::before {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.login-mascot img {
+    position: relative;
+    width: 82%;
+    height: auto;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(58, 169, 224, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.bubble-a {
+    width: 30%;
+    height: 30%;
+    top: -16%;
+    left: -22%;
+}
+
+.bubble-b {
+    width: 16%;
+    height: 16%;
+    top: 8%;
+    right: -16%;
+    background: rgba(58, 169, 224, 0.75);
+    border-color: transparent;
+}
+
+.bubble-c {
+    width: 26%;
+    height: 26%;
+    bottom: -14%;
+    left: -12%;
+}
+/* ---------- Card de login ---------- */
+ 
 .login {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 400px;
+    width: 85%;
     display: flex;
     flex-direction: column;
     gap: 16px;
-};
+    padding: 32px;
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid rgba(150, 195, 245, 0.35);
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(120, 170, 235, 0.07) 100%
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 0 32px rgba(58, 169, 224, 0.15);
+}
+ 
+.login h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+}
+ 
+.login-welcome {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    color: #fff;
+}
+ 
+.login-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+ 
+.login-group label {
+    font-size: 0.8rem;
+    color: #fff;
+}
+ 
+.login-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: #6fb8e8;
+    background: #083068;
+}
+ 
+.login-field:focus-within {
+    outline: 2px solid #3aa9e0;
+    outline-offset: 1px;
+}
+ 
+.login-field input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 0.8rem;
+}
+ 
+.login-field input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+ 
+.login-eye {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #6fb8e8;
+    cursor: pointer;
+}
+ 
+.login-forgot {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    color: #4fc3f7;
+    text-decoration: none;
+}
+ 
+.login-forgot:hover,
+.login-signup:hover {
+    text-decoration: underline;
+}
+ 
+.login-submit {
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    background: #3db0ea;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+ 
+.login-submit:hover {
+    background: #52bcf0;
+}
+ 
+.login-social {
+    display: flex;
+    gap: 12px;
+}
+ 
+.login-social button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(90, 200, 255, 0.6);
+    background: rgba(56, 170, 255, 0.12);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+ 
+.login-social button:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+ 
+.login-signup {
+    align-self: center;
+    font-size: 0.8rem;
+    color: #9ad1ff;
+    text-decoration: none;
+}
+ 
+.login-submit:focus-visible,
+.login-social button:focus-visible,
+.login a:focus-visible,
+.login-eye:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+ 
+/* ---------- Mobile / telas estreitas: empilha ---------- */
+ 
+@media (max-width: 820px) {
+    .login-page {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 24px;
+    }
+ 
+    .login-mascot {
+        grid-column: 1;
+        grid-row: 1;
+        width: 160px;
+    }
+ 
+    .login {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 16px;
+        width: min(100%, 26em);
+    }
+}
