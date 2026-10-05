@@ -1,6 +1,312 @@
-.div-buttons {
+.cadastro-page {
+    position: relative;
+    min-height: 100svh;
     display: flex;
-    gap: 16px;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(160deg, #0e4e8d 0%, #0a3877 55%, #051a3a 100%);
+}
+
+.cadastro-usuario {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 32px;
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid rgba(150, 195, 245, 0.35);
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(120, 170, 235, 0.07) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 0 32px rgba(58, 169, 224, 0.15);
+}
+
+.cadastro-usuario h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* ---------- Indicador de etapas (1 —— 2) ---------- */
+
+.etapas-indicador {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 180px;
+}
+
+.etapa-dot {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(150, 195, 245, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.6);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.etapa-dot.ativa {
+    background: #3db0ea;
+    border-color: #3db0ea;
+    color: #fff;
+}
+
+.etapa-linha {
+    flex: 1;
+    height: 1px;
+    background: rgba(150, 195, 245, 0.35);
+}
+
+.cadastro-usuario-welcome {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* ---------- Grid de campos ----------
+   2 colunas; span-2 faz um campo ocupar a linha inteira. */
+.cadastro-usuario-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    min-height: 160px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.field-group.span-2 {
+    grid-column: 1 / -1;
+}
+
+.field-group label {
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.cadastro-usuario-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: #8dbcf0;
+    background: #083068;
+}
+
+.cadastro-usuario-field:focus-within {
+    outline: 2px solid #3aa9e0;
+    outline-offset: 1px;
+}
+
+.cadastro-usuario-field svg {
+    flex: none;
+}
+
+.cadastro-usuario-field input,
+.cadastro-usuario-field select {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 0.8rem;
+    font-family: inherit;
+}
+
+.cadastro-usuario-field select {
+    appearance: none;
+}
+
+.cadastro-usuario-field input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cadastro-usuario-field select option {
+    color: #051a3a;
+}
+
+/* ---------- Botões ---------- */
+
+.cadastro-usuario-submit,
+.cadastro-usuario-voltar {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+    text-decoration: none;
+}
+
+.cadastro-usuario-submit {
+    background: #3db0ea;
+    color: #fff;
+}
+
+.cadastro-usuario-submit:hover {
+    background: #52bcf0;
+}
+
+.cadastro-usuario-voltar {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.cadastro-usuario-voltar:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Quando tem Voltar + Cadastrar juntos, ficam lado a lado */
+.cadastro-usuario-botoes {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.cadastro-usuario-signup {
+    font-size: 0.8rem;
+    color: #9ad1ff;
+    text-decoration: none;
+}
+
+.cadastro-usuario-signup:hover {
+    text-decoration: underline;
+}
+
+.cadastro-usuario-submit:focus-visible,
+.cadastro-usuario-voltar:focus-visible,
+.cadastro-usuario-signup:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ---------- Mascote Lyo ---------- */
+.lyo-cadastro {
+    position: absolute;
+    left: 1%;
+    bottom: 4%;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.lyo-cadastro-imagem {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.25));
+    animation: lyoFloat 3s ease-in-out infinite;
+}
+
+@keyframes lyoFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-4px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(4deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(-2deg);
+    }
+}
+
+.lyo-cadastro-balao {
+    max-width: 210px;
+    padding: 12px 16px;
+    border-radius: 16px 16px 16px 16px;
+    background: rgba(14, 78, 141, 0.9);
+    border: 1px solid rgba(150, 195, 245, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translate(-70px, -135px);
+}
+
+.lyo-cadastro-balao::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    bottom: -8px;
+    width: 14px;
+    height: 14px;
+    background: rgba(14, 78, 141, 0.9);
+    border-right: 1px solid rgba(150, 195, 245, 0.35);
+    border-bottom: 1px solid rgba(150, 195, 245, 0.35);
+    transform: rotate(45deg);
+}
+
+/* ---------- Telas estreitas ---------- */
+
+@media (max-width: 1000px) {
+
+    .lyo-cadastro {
+        left: 10px;
+        bottom: 10px;
+        gap: 4px;
+    }
+
+    .lyo-cadastro-imagem {
+        width: 120px;
+    }
+
+    .lyo-cadastro-balao {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .cadastro-usuario-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .field-group.span-2 {
+        grid-column: 1;
+    }
 }

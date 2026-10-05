@@ -23,11 +23,11 @@ function Login() {
                 <span className="bubble bubble-a" />
                 <span className="bubble bubble-b" />
                 <span className="bubble bubble-c" />
-                <img src={lyo} alt="" />
+                <img src={lyo} alt="" className="lyo-cadastro-imagem"/>
             </div>
 
             <form className="login" onSubmit={handleSubmit}>
-                <h1>LYO</h1>
+                <h1>Agenda PetCare</h1>
                 <p className="login-welcome">Seja bem-vindo!</p>
 
                 <div className="login-group">
