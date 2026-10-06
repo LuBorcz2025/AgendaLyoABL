@@ -1,11 +1,13 @@
 import './index.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AnimatedBackground from '../../components/AnimatedBackground';
 import type { FormEvent } from 'react';
 import { useState } from 'react';
 import lyo from '../../assets/lyo-happy-edited.png';
 
 function Login() {
+    const navigate = useNavigate();
+
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
     const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -13,6 +15,17 @@ function Login() {
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
         // TODO: chamar sua API de login com usuario e senha
+        if (usuario === "lu@gmail.com" && senha === "dev123") {
+            navigate('/home');
+            return;
+        }
+
+        if (usuario === "" && senha === "") {
+            alert('Digite o seu e-mail e a sua senha.')
+            return;
+        }
+
+        alert('E-mail ou senha incorretos.');
     }
 
     return (
@@ -23,7 +36,7 @@ function Login() {
                 <span className="bubble bubble-a" />
                 <span className="bubble bubble-b" />
                 <span className="bubble bubble-c" />
-                <img src={lyo} alt="" className="lyo-cadastro-imagem"/>
+                <img src={lyo} alt="" className="lyo-cadastro-imagem" />
             </div>
 
             <form className="login" onSubmit={handleSubmit}>

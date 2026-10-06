@@ -1,0 +1,320 @@
+/* =========================================
+   PRIMEIRA SEÇÃO
+========================================= */
+
+.first-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* =========================================
+   ESTILO BASE DOS CARDS
+========================================= */
+
+.attention-card,
+.lyo-suggestions-card {
+    min-width: 0;
+    padding: 20px;
+    border: 2px solid rgba(150, 195, 245, 0.35);
+    border-radius: 10px;
+    background: #174b94;
+    box-sizing: border-box;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.attention-header,
+.lyo-suggestions-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.section-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(96, 183, 239, 0.25);
+    border-radius: 9px;
+    color: #ffd84d;
+    background: rgba(11, 56, 108, 0.301);
+}
+
+.lyo-icon {
+    color: #b58cff;
+}
+
+.attention-header h2,
+.lyo-suggestions-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.attention-header p,
+.lyo-suggestions-header p {
+    margin: 0;
+    color: rgba(211, 226, 243, 0.65);
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   CARD ATENÇÃO
+========================================= */
+
+.attention-pet {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 9px 0;
+}
+
+.pet-photo {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    padding: 5px;
+    border-radius: 50%;
+    background: #3db0ea;
+    margin: 2px 0px
+}
+
+.pet-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pet-attention-info {
+    min-width: 0;
+}
+
+.attention-status {
+    display: inline-block;
+    margin-bottom: 2px;
+    padding: 4px 10px;
+    border-radius: 16px;
+    color: hsl(0, 100%, 73%);
+    background: rgba(255, 76, 76, 0.479);
+    font-size: 0.62rem;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.pet-attention-info h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pet-attention-info p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* =========================================
+   RODAPÉ DO CARD ATENÇÃO                   
+========================================= */
+
+.attention-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.pet-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.pet-avatars img {
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.check-icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #092f61;
+    background: #35d47d;
+}
+
+.more-pets {
+    margin-left: 10px;
+    padding: 3px 7px;
+    border-radius: 16px;
+    color: #fff;
+    background: #14b3d3;
+    font-size: 0.75rem;
+}
+
+.view-all-button {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 16px;
+    color: #d5e7fa;
+    background: rgba(116, 157, 194, 0.637);
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    transform: translateY(-1px);
+    background: rgba(134, 175, 211, 0.637);
+}
+
+/* =========================================
+   SUGESTÕES DA LYO
+========================================= */
+
+.lyo-suggestion {
+    flex: 1;
+    min-height: 130px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid rgba(105, 181, 232, 0.2);
+    border-radius: 8px;
+    background: rgba(9, 44, 85, 0.301);
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 6px;
+    position: relative;
+}
+
+.suggestion-text {
+    min-width: 0;
+    max-width: 90%;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: calc(100% - 65px);
+    color: #e8f3ff;
+}
+
+.suggestion-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.quote-icon {
+    flex-shrink: 0;
+    color: #7cccf1;
+}
+
+.lyo-suggestion-image {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+    right: -4px;
+    top: 8%;
+    transform: translateY(-50%);
+    object-fit: contain;
+    animation: lyoHomeFloat 3s ease-in-out infinite;
+}
+
+@keyframes lyoHomeFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* =========================================
+   BOTÕES DA LYO
+========================================= */
+
+.lyo-suggestion-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.see-more-button {
+    height: 34px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background: #9b6cff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Urbanist';
+}
+
+.see-more-button:hover {
+    background: #9b6cff;
+    transform: translateY(-1px);
+}
+
+.talk-lyo-field {
+    flex: 1;
+    min-width: 0;
+    height: 34px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(220, 232, 245, 0.55);
+    font-size: 0.7rem;
+    font-family: 'Urbanist';
+}
+
+.locked-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: #bde5ff;
+    background: #3d9fd3;
+}

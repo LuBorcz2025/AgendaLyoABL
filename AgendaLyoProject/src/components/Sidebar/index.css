@@ -1,0 +1,138 @@
+.sidebar {
+    position: fixed;
+    top: 16px;
+    left: 24px;
+    bottom: 16px;
+    width: 50px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 6px;
+    box-sizing: border-box;
+    border: 2px solid rgba(150, 195, 245, 0.35);
+    border-radius: 10px;
+    background: #174b94;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* ---------- Logo ---------- */
+
+.sidebar-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-logo {
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.sidebar-logo img {
+    width: 50px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.sidebar-logo p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.15em;
+}
+
+/* ---------- Navegação ---------- */
+
+.sidebar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-link {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: rgba(210, 228, 248, 0.8);
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.sidebar-link.active {
+    color: #4dc8e2;
+    background: rgba(61, 176, 234, 0.16);
+}
+
+.sidebar-link.active::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    width: 3px;
+    height: 18px;
+    border-radius: 4px;
+    background: #3db0ea;
+}
+
+/* ---------- Parte inferior ---------- */
+
+.sidebar-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-profile {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+}
+
+.sidebar-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-profile:hover {
+    border-color: #4dc8e2;
+}

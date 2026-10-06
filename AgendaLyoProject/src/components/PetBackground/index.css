@@ -1,0 +1,20 @@
+.pet-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(160deg,
+            #0a3564 0%,
+            #082b5c 55%,
+            #031936 100%);
+}
+
+.pet-background-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+    pointer-events: none;
+}

@@ -2,7 +2,7 @@ import './index.css';
 import { memo, useState } from 'react';
 import type { CSSProperties } from 'react';
 
-const SNACKS = [
+export const SNACKS = [
   // Osso
   `
     <svg width="32" height="16" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
