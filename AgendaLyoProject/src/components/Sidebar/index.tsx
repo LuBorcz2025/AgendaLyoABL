@@ -37,9 +37,7 @@ const menuItems = [
 function Sidebar() {
     return (
         <aside className="sidebar">
-
             <div className="sidebar-top">
-
                 <div className="sidebar-logo">
                     <img src={lyoLogo} alt="Lyo" />
                     <p>LYO</p>
@@ -50,21 +48,25 @@ function Sidebar() {
                         <NavLink
                             key={path}
                             to={path}
-                            end={path === '/home'}
+                            end={path === "/home"}
                             title={label}
                             className={({ isActive }) =>
-                                `sidebar-link ${isActive ? 'active' : ''}`
+                                `sidebar-link ${isActive ? "active" : ""}`
                             }
                         >
-                            <Icon size={18} strokeWidth={1.8} />
+                            {({ isActive }) => (
+                                <Icon
+                                    size={20}
+                                    strokeWidth={1.8}
+                                    fill={isActive ? "currentColor" : "none"}
+                                />
+                            )}
                         </NavLink>
                     ))}
                 </nav>
-
             </div>
 
             <div className="sidebar-bottom">
-
                 <NavLink
                     to="/configuracoes"
                     title="Configurações"
@@ -72,9 +74,8 @@ function Sidebar() {
                         `sidebar-link ${isActive ? 'active' : ''}`
                     }
                 >
-                    <Settings size={18} strokeWidth={1.8} />
+                    <Settings size={22} strokeWidth={1.8} />
                 </NavLink>
-
                 <button
                     type="button"
                     className="sidebar-profile"
@@ -85,9 +86,7 @@ function Sidebar() {
                         alt="Perfil"
                     />
                 </button>
-
             </div>
-
         </aside>
     );
 }

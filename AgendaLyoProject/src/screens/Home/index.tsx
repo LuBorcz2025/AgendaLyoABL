@@ -5,6 +5,7 @@ import {
     PawPrint,
 } from 'lucide-react';
 import PetBackground from "../../components/PetBackground";
+import SecondSection from "../../components/Home/SecondSection";
 
 function Home() {
     return (
@@ -18,13 +19,14 @@ function Home() {
                         <PawPrint size={28} strokeWidth={1.8} fill="currentColor" />
                     </div>
                     <div className="header-texts">
-                        <h1 className="home-header-title">Olá, Usuário!</h1>
+                        <h1 className="home-header-title">Olá, Luiza!</h1>
                         <p className="home-header-text">Veja como seus pets estão hoje.</p>
                     </div>
                 </header>
 
                 {/* As seções da Home serão adicionadas aqui. */}
                 <FirstSection />
+                <SecondSection />
             </main>
         </div>
     );

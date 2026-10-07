@@ -6,7 +6,8 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 /* =========================================
@@ -50,7 +51,7 @@
     border: 1px solid rgba(96, 183, 239, 0.25);
     border-radius: 9px;
     color: #ffd84d;
-    background: rgba(11, 56, 108, 0.301);
+    background: rgba(9, 44, 85, 0.301);
 }
 
 .lyo-icon {

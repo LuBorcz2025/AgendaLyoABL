@@ -1,0 +1,88 @@
+/* ---------- Card de clima ---------- */
+.weather-card {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.4s ease;
+}
+
+/* troque cada gradiente por imagem quando tiver os arquivos, ex.:
+   background-image:
+     linear-gradient(rgba(6, 25, 55, 0.35), rgba(6, 25, 55, 0.55)),
+     url("./assets/weather/frio.jpg");
+*/
+.weather-card--cold {
+    background: linear-gradient(160deg,
+            #0b2d58 0%,
+            #3d6598 100%);
+}
+
+.weather-card--mild {
+    background: linear-gradient(160deg,
+            #12376a 0%,
+            #527da8 100%);
+    /*background-image: url("../../assets/clima-chovendo.jpeg");*/
+}
+
+.weather-card--warm {
+    background: linear-gradient(160deg,
+            #164783 0%,
+            #3d7fa9 70%,
+            #c99555 100%);
+}
+
+.weather-card--hot {
+    background: linear-gradient(160deg,
+            #12396d 0%,
+            #2477a5 55%,
+            #e0ae55 100%);
+}
+
+.weather-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather-city {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.weather-reading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.weather-icon {
+    font-size: 3.2rem;
+}
+
+.weather-temp {
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.weather-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    text-transform: capitalize;
+}
+
+.weather-meta strong {
+    font-size: 1rem;
+}

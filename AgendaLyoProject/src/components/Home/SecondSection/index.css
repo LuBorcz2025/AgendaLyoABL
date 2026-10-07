@@ -1,0 +1,195 @@
+.second-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 16px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.calendar-card {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    padding: 18px;
+    box-sizing: border-box;
+    align-self: start;
+    background: #174b94;
+    border: 2px solid rgba(150, 195, 245, 0.35);
+    border-radius: 10px;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.calendar-header {
+    margin-bottom: 12px;
+}
+
+.calendar-label {
+    display: block;
+    margin-bottom: 3px;
+    color: rgba(211, 226, 243, 0.55);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.calendar-container {
+    width: 100%;
+    font-family: "Urbanist", system-ui, sans-serif;
+    /*Qualquer coisa exclui esses 4!*/
+    background: rgba(4, 36, 73, 0.301);
+    border: 1px solid rgba(105, 181, 232, 0.2);
+    border-radius: 6px;
+    padding: 4px
+}
+
+/* ---------- Cabeçalho: < outubro 2026 > ---------- */
+.calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 10px;
+    padding: 2px
+}
+
+.calendar-toolbar-section {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.calendar-nav-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    background: rgb(9, 50, 97);
+    color: rgba(220, 235, 250, 0.85);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.calendar-nav-btn:hover {
+    background: rgba(77, 200, 226, 0.2);
+    color: #ffffff;
+}
+
+.calendar-nav-btn:focus-visible {
+    outline: 2px solid #4dc8e2;
+    outline-offset: 2px;
+}
+
+/* ---------- Dias da semana ---------- */
+.calendar-weekday {
+    display: flex;
+    justify-content: center;
+    padding: 3px 0;
+}
+
+.calendar-weekday-inner {
+    color: rgba(211, 226, 243, 0.5);
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 16px;
+}
+
+/* ---------- Células e números ---------- */
+.calendar-cell {
+    border: none;
+    background: transparent;
+}
+
+.calendar-day-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.calendar-day {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: rgba(235, 243, 252, 0.85);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background: rgba(77, 200, 226, 0.15);
+    color: #ffffff;
+}
+
+.calendar-day--weekend,
+.calendar-weekday-inner--weekend {
+    color: #57adfd;
+}
+
+/* hoje: só um contorno */
+.calendar-day--today {
+    box-shadow: inset 0 0 0 1.5px #4dc8e2;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* selecionado: preenchido (vence o "hoje" quando coincidem) */
+.calendar-day--selected {
+    background: #4dc8e2;
+    color: #062b52;
+    font-weight: 700;
+    box-shadow: 0 0 0 3px rgba(77, 200, 226, 0.15);
+}
+
+/* bolinha de evento */
+.calendar-day--event::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #4dc8e2;
+}
+
+.calendar-day--selected.calendar-day--event::after {
+    background: #062b52;
+}
