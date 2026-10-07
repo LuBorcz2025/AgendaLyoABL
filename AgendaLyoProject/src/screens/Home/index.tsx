@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import PetBackground from "../../components/PetBackground";
 import SecondSection from "../../components/Home/SecondSection";
+import ThirdSection from "../../components/Home/ThirdSection";
 
 function Home() {
     return (
@@ -27,6 +28,7 @@ function Home() {
                 {/* As seções da Home serão adicionadas aqui. */}
                 <FirstSection />
                 <SecondSection />
+                <ThirdSection />
             </main>
         </div>
     );

@@ -189,6 +189,7 @@
     background: rgba(116, 157, 194, 0.637);
     font-size: 0.7rem;
     cursor: pointer;
+    letter-spacing: 0.2px;
 }
 
 .view-all-button:hover {
@@ -285,10 +286,11 @@
     font-weight: 500;
     cursor: pointer;
     font-family: 'Urbanist';
+    letter-spacing: 0.5px;
 }
 
 .see-more-button:hover {
-    background: #9b6cff;
+    background: #ab84ff;
     transform: translateY(-1px);
 }
 
@@ -306,6 +308,8 @@
     color: rgba(220, 232, 245, 0.55);
     font-size: 0.7rem;
     font-family: 'Urbanist';
+    border: 1px solid rgba(105, 181, 232, 0.2);
+    letter-spacing: 0.5px;
 }
 
 .locked-icon {

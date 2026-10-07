@@ -77,7 +77,7 @@ function FirstSection() {
             <article className="lyo-suggestions-card">
                 <div className="lyo-suggestions-header">
                     <div className="section-icon lyo-icon">
-                        <Sparkles size={24} fill="currentColor" />
+                        <Sparkles size={24} strokeWidth={2.5} />
                     </div>
                     <div>
                         <h2>SUGESTÕES DA LYO</h2>

@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 16px;
+    margin-bottom: 12px;
 }
 
 /* =========================================
@@ -171,7 +172,7 @@
 
 /* selecionado: preenchido (vence o "hoje" quando coincidem) */
 .calendar-day--selected {
-    background: #4dc8e2;
+    background: #b58cff;;
     color: #062b52;
     font-weight: 700;
     box-shadow: 0 0 0 3px rgba(77, 200, 226, 0.15);

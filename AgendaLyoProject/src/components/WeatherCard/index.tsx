@@ -49,15 +49,29 @@ function WeatherCard({ city }: Props) {
 
     useEffect(() => {
         const controller = new AbortController();
-        setError(null);
 
-        fetchWeather(city, controller.signal)
-            .then(setWeather)
-            .catch((e) => {
-                if (e.name !== "AbortError") setError(e.message);
-            });
+        const loadWeather = () => {
+            setError(null);
+            
+            fetchWeather(city, controller.signal)
+                .then(setWeather)
+                .catch((e) => {
+                    if (e.name !== "AbortError") {
+                        setError(e.message);
+                    }
+                });
+        };
 
-        return () => controller.abort();
+        loadWeather();
+
+        const interval = setInterval(() => {
+            loadWeather();
+        }, 1 * 60 * 1000);
+
+        return () => {
+            controller.abort();
+            clearInterval(interval);
+        };
     }, [city]);
 
     if (error) return <article className="weather-card weather-card--mild">{error}</article>;
