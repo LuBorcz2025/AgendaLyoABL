@@ -38,7 +38,7 @@ function FirstSection() {
                             PENDENTE
                         </span>
                         <h3>Luna</h3>
-                        <p>Vacina vence amanhã!</p>
+                        <p>Vencimento da vacina antirrábica.</p>
                     </div>
                 </div>
 

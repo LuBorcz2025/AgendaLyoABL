@@ -8,6 +8,7 @@ import PetBackground from "../../components/PetBackground";
 import SecondSection from "../../components/Home/SecondSection";
 import ThirdSection from "../../components/Home/ThirdSection";
 import FourthSection from "../../components/Home/FourthSection";
+import FifthSection from "../../components/Home/FifthSection";
 
 function Home() {
     return (
@@ -31,6 +32,7 @@ function Home() {
                 <SecondSection />
                 <ThirdSection />
                 <FourthSection />
+                <FifthSection />
             </main>
         </div>
     );

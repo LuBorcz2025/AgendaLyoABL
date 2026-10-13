@@ -1,0 +1,242 @@
+.fifth-section {
+    width: 100%;
+    gap: 12px;
+}
+
+.section-header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: -2px;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.section-header p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 200;
+    color: #ffffffb0;
+}
+
+/* Lista de lembretes */
+.lista-lembretes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.lembrete-card {
+    min-width: 0;
+    padding: 20px;
+    border: 2px solid rgba(150, 195, 245, 0.35);
+    border-radius: 10px;
+    background: #174b94;
+    box-sizing: border-box;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+
+/* Cabeçalho do pet */
+.lembrete-header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    min-width: 0;
+}
+
+.pet-image-lembrete {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(150, 195, 245, 0.45);
+    box-sizing: border-box;
+}
+
+.lembrete-pet-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    flex: 1;
+}
+
+.lembrete-pet-info h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.div-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a8c5e9;
+    min-width: 0;
+}
+
+.div-icon svg {
+    flex-shrink: 0;
+}
+
+.div-icon p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8em;
+}
+
+/* Status */
+.lembrete-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(230, 166, 48, 0.17);
+    color: #ffc65c;
+    font-size: 0.7em;
+    font-weight: 600;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffc65c;
+}
+
+/* Título */
+.lembrete-titulo {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Faixa de informações */
+.lembrete-informacoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    padding: 7px;
+    border: 1px solid rgba(62, 135, 215, 0.18);
+    border-radius: 8px;
+    background: rgba(2, 32, 69, 0.35);
+}
+
+.lembrete-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 3px;
+    border-radius: 8px;
+    font-size: 0.7em;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.lembrete-info span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lembrete-info svg {
+    flex-shrink: 0;
+}
+
+.lembrete-info.saude {
+    background: rgba(0, 190, 145, 0.17);
+    color: #65e5bd;
+}
+
+.lembrete-info.food {
+    background: rgba(206, 192, 1, 0.24);
+    color: #e3e565;
+}
+
+.lembrete-info.higiene {
+    background: rgba(13, 161, 187, 0.404);
+    color: #3de5f1;
+}
+
+.lembrete-info.data {
+    background: rgba(36, 119, 211, 0.17);
+    color: #c2ddff;
+}
+
+.lembrete-info.prazo {
+    color: #d4b4ff;
+    background: rgba(147, 85, 220, 0.14);
+}
+
+/* Rodapé */
+.lembrete-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.lembrete-footer p {
+    margin: 0;
+    color: #7898bd;
+    font-size: 0.7em;
+    line-height: 1.4;
+}
+
+.lembrete-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background: #103967;
+    color: #fff;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lembrete-botao:hover {
+    background: #1b528e;
+    transform: translateX(2px);
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .lista-lembretes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .lista-lembretes {
+        grid-template-columns: 1fr;
+    }
+}

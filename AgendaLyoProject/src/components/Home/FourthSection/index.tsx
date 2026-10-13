@@ -17,7 +17,7 @@ type Pet = {
 const pets: Pet[] = [
     {
         name: "Thor",
-        breed: "Vira-lata",
+        breed: "Pug",
         src: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=100",
     },
     {
