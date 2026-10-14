@@ -1,6 +1,6 @@
 .home-layout {
     min-height: 100vh;
-    
+
 }
 
 .home-content {
@@ -63,5 +63,88 @@
     .home-content {
         margin-left: 0;
         padding: 24px 16px 100px;
+    }
+}
+
+/* Botão interativo da Lyo! */
+.lyo-floating-button {
+    position: fixed;
+    right: 18px;
+    bottom: 12px;
+    z-index: 9999;
+    width: 76px;
+    height: 76px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1760a9, #092d60);
+    border: 2px solid rgba(150, 195, 245, 0.6);
+    border-radius: 50%;
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(76, 160, 255, 0.18);
+    cursor: pointer;
+    animation: lyoFloatingEntrance 0.8s ease-out both,
+        lyoFloat 3s ease-in-out 0.8s infinite;
+}
+
+.lyo-floating-button img {
+    width: 130%;
+    height: 130%;
+    object-fit: contain;
+}
+
+.lyo-floating-button:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.35),
+        0 0 24px rgba(76, 160, 255, 0.3);
+}
+
+.lyo-floating-button:focus-visible {
+    outline: 3px solid #80d8ff;
+    outline-offset: 4px;
+}
+
+/* Entrada com flutuação e rotação */
+@keyframes lyoFloatingEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotate(-12deg) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+/* Flutuação contínua */
+@keyframes lyoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .lyo-floating-button {
+        animation: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .lyo-floating-button {
+        width: 62px;
+        height: 62px;
+        right: 16px;
+        bottom: 18px;
     }
 }

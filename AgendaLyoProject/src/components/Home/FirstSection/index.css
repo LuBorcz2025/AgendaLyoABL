@@ -1,7 +1,6 @@
 /* =========================================
    PRIMEIRA SEÇÃO
 ========================================= */
-
 .first-section {
     width: 100%;
     display: grid;
@@ -13,7 +12,6 @@
 /* =========================================
    ESTILO BASE DOS CARDS
 ========================================= */
-
 .attention-card,
 .lyo-suggestions-card {
     min-width: 0;
@@ -32,7 +30,6 @@
 /* =========================================
    CABEÇALHO
 ========================================= */
-
 .attention-header,
 .lyo-suggestions-header {
     display: flex;
@@ -77,7 +74,6 @@
 /* =========================================
    CARD ATENÇÃO
 ========================================= */
-
 .attention-pet {
     display: flex;
     align-items: center;
@@ -136,7 +132,6 @@
 /* =========================================
    RODAPÉ DO CARD ATENÇÃO                   
 ========================================= */
-
 .attention-footer {
     display: flex;
     align-items: center;
@@ -200,7 +195,6 @@
 /* =========================================
    SUGESTÕES DA LYO
 ========================================= */
-
 .lyo-suggestion {
     flex: 1;
     min-height: 130px;
@@ -220,7 +214,7 @@
 
 .suggestion-text {
     min-width: 0;
-    max-width: 90%;
+    max-width: 80%;
     display: flex;
     align-items: flex-start;
     gap: 15px;
@@ -266,7 +260,6 @@
 /* =========================================
    BOTÕES DA LYO
 ========================================= */
-
 .lyo-suggestion-footer {
     display: flex;
     align-items: center;

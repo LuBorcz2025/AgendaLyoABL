@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import FirstSection from "../../components/Home/FirstSection";
 import './index.css';
@@ -9,8 +11,35 @@ import SecondSection from "../../components/Home/SecondSection";
 import ThirdSection from "../../components/Home/ThirdSection";
 import FourthSection from "../../components/Home/FourthSection";
 import FifthSection from "../../components/Home/FifthSection";
+import lyo from "../../assets/lyo-happy-edited.png"
 
 function Home() {
+    const firstSectionRef = useRef<HTMLDivElement>(null);
+    const mainRef = useRef<HTMLElement>(null);
+    const [mostrarLyo, setMostrarLyo] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const section = firstSectionRef.current;
+
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setMostrarLyo(!entry.isIntersecting);
+            },
+            {
+                threshold: 0,
+            }
+        );
+
+        observer.observe(section);
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
     return (
         <div className="home-layout">
             <PetBackground />
@@ -28,12 +57,26 @@ function Home() {
                 </header>
 
                 {/* As seções da Home serão adicionadas aqui. */}
-                <FirstSection />
+                <div ref={firstSectionRef}>
+                    <FirstSection />
+                </div>
                 <SecondSection />
                 <ThirdSection />
                 <FourthSection />
                 <FifthSection />
             </main>
+
+            {mostrarLyo && (
+                <button
+                    type="button"
+                    className="lyo-floating-button"
+                    onClick={() => navigate("/lyo")}
+                    aria-label="Abrir o hub da Lyo"
+                    title="Converse com a Lyo"
+                >
+                    <img src={lyo} alt="" />
+                </button>
+            )}
         </div>
     );
 }

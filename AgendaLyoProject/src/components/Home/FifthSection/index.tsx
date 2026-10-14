@@ -6,7 +6,8 @@ import {
     ChevronRight,
     PawPrint,
     Bone,
-    Bubbles
+    Bubbles,
+    Heart
 } from "lucide-react";
 
 function FifthSection() {
@@ -200,7 +201,12 @@ function FifthSection() {
                         </button>
                     </div>
                 </div>
+            </div>
 
+            <div className='footer'>
+                <PawPrint size={16} fill="currentColor"/>
+                <h2>Você está cuidando muito bem deles !</h2>
+                <Heart size={16} fill="currentColor"/>
             </div>
         </section>
     )

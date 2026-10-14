@@ -152,6 +152,7 @@
     padding: 6px 3px;
     border-radius: 8px;
     font-size: 0.7em;
+    font-weight: 500;
     white-space: nowrap;
     min-width: 0;
 }
@@ -239,4 +240,20 @@
     .lista-lembretes {
         grid-template-columns: 1fr;
     }
+}
+
+/* Footer - Mensagem*/
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    color: #b5b9b9;
+    justify-content: center;
+}
+
+.footer h2 {
+    font-size: 0.9em;
+    margin: 0;
+    font-weight: 400;
 }
