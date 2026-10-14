@@ -119,6 +119,36 @@ export const sugestoes: Sugestao[] = [
         acao: "Criar lembrete",
         icone: HeartPulse,
     },
+    {
+        id: 16,
+        pet: "Lilica",
+        titulo: "Vamos conferir a alimentação?",
+        descricao:
+            "Confira se a Pipoca está recebendo uma alimentação variada e adequada para calopsitas.",
+        categoria: "alimentacao",
+        acao: "Ver alimentação",
+        icone: Bone,
+    },
+    {
+        id: 17,
+        pet: "Lilica",
+        titulo: "Hora de cuidar da saúde!",
+        descricao:
+            "Confira os cuidados preventivos da Pipoca e planeje uma consulta com um veterinário especializado em aves.",
+        categoria: "saude",
+        acao: "Ver cuidados",
+        icone: HeartPulse,
+    },
+    {
+        id: 18,
+        pet: "Lilica",
+        titulo: "Vamos renovar o ambiente?",
+        descricao:
+            "Confira a limpeza da gaiola, dos comedouros e dos bebedouros para manter o ambiente da Pipoca limpo e confortável.",
+        categoria: "higiene",
+        acao: "Criar lembrete",
+        icone: Bubbles,
+    },
 ];
 
 /** Sorteia `quantidade` sugestões únicas (Fisher-Yates), evitando repetir as já exibidas quando possível. */

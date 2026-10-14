@@ -31,6 +31,11 @@ const pets: Pet[] = [
         breed: "SRD",
         src: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200",
     },
+    {
+        name: "Lilica",
+        breed: "Calopsita",
+        src: "https://images.unsplash.com/photo-1573048729868-33c6cfcc4b0b?w=800&q=80&auto=format&fit=crop",
+    },
 ];
 
 const pets1: Pet[] = [];

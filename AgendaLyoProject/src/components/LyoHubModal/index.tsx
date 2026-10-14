@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
     X,
     RotateCw,
-    ArrowRight,
+    Lock
 } from "lucide-react";
 import "./index.css";
 import lyo from "../../assets/lyo-happy-edited.png";
@@ -130,7 +130,7 @@ export default function LyoHubModal({
                                     }}
                                 >
                                     <span>{sugestao.acao}</span>
-                                    <ArrowRight size={16} strokeWidth={2.5} color="#fff" />
+                                    <Lock size={14} strokeWidth={2.5} color="#fff" />
                                 </button>
                             </article>
                         );
