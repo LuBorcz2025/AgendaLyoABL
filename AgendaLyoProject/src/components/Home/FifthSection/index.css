@@ -173,12 +173,12 @@
 
 .lembrete-info.food {
     background: rgba(206, 192, 1, 0.24);
-    color: #e3e565;
+    color: #ffe19a;
 }
 
 .lembrete-info.higiene {
     background: rgba(13, 161, 187, 0.404);
-    color: #3de5f1;
+    color: #8deaff;
 }
 
 .lembrete-info.data {

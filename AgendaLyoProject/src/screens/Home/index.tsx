@@ -11,12 +11,14 @@ import SecondSection from "../../components/Home/SecondSection";
 import ThirdSection from "../../components/Home/ThirdSection";
 import FourthSection from "../../components/Home/FourthSection";
 import FifthSection from "../../components/Home/FifthSection";
-import lyo from "../../assets/lyo-happy-edited.png"
+import lyo from "../../assets/lyo-start.png"
+import LyoHubModal from "../../components/LyoHubModal";
 
 function Home() {
     const firstSectionRef = useRef<HTMLDivElement>(null);
     const mainRef = useRef<HTMLElement>(null);
     const [mostrarLyo, setMostrarLyo] = useState(false);
+    const [lyoModalAberto, setLyoModalAberto] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -58,7 +60,7 @@ function Home() {
 
                 {/* As seções da Home serão adicionadas aqui. */}
                 <div ref={firstSectionRef}>
-                    <FirstSection />
+                    <FirstSection onVerMaisLyo={() => setLyoModalAberto(true)} />
                 </div>
                 <SecondSection />
                 <ThirdSection />
@@ -66,17 +68,22 @@ function Home() {
                 <FifthSection />
             </main>
 
-            {mostrarLyo && (
+            {mostrarLyo && !lyoModalAberto && (
                 <button
                     type="button"
                     className="lyo-floating-button"
-                    onClick={() => navigate("/lyo")}
+                    onClick={() => setLyoModalAberto(true)}
                     aria-label="Abrir o hub da Lyo"
                     title="Converse com a Lyo"
                 >
                     <img src={lyo} alt="" />
                 </button>
             )}
+
+            <LyoHubModal
+                isOpen={lyoModalAberto}
+                onClose={() => setLyoModalAberto(false)}
+            />
         </div>
     );
 }

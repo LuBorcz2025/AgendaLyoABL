@@ -1,0 +1,329 @@
+.lyo-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(1, 10, 25, 0.72);
+    backdrop-filter: blur(5px);
+    animation: lyoOverlayIn 0.2s ease both;
+}
+
+.lyo-modal {
+    position: relative;
+    width: min(100%, 850px);
+    max-height: min(85vh, 720px);
+    overflow-y: auto;
+    padding: 22px;
+    box-sizing: border-box;
+    color: #fff;
+    background: linear-gradient(145deg, #0c3264, #08254d);
+    border: 1px solid rgba(100, 172, 245, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+    animation: lyoModalIn 0.3s ease both;
+}
+
+.lyo-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 8px;
+    color: #c8ddf7;
+    background: rgba(255, 255, 255, 0.13);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lyo-modal-close:hover {
+    background: rgba(255, 255, 255, 0.23);
+}
+
+.lyo-modal-close.reload{
+    top: 12px;
+    right: 50px;
+}
+
+/* Cabeçalho */
+.lyo-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    min-height: 90px;
+}
+
+.lyo-modal-mascot {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    position: absolute;
+    left: -20px;
+    bottom: -26px;
+}
+
+.lyo-modal-mascot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: lyoMascotFloat 3s ease-in-out 0.3s infinite;
+}
+
+.lyo-modal-heading {
+    min-width: 0;
+    margin-left: 130px;
+}
+
+.lyo-modal-heading h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.lyo-modal-heading h2 span {
+    color: #b99aff;
+}
+
+.lyo-modal-heading p {
+    margin: 0;
+    color: #b7cce8;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+/* Lista de sugestões */
+.lyo-modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-lyo-suggestion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    background: #244b83;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 11px;
+    transition: background 0.2s ease;
+    max-height: 20px;
+    min-height: 85px;
+}
+
+.modal-lyo-suggestion:hover {
+    background: #2b568f;
+}
+
+.modal-lyo-suggestion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.modal-lyo-suggestion-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-lyo-suggestion-pet {
+    display: block;
+    margin-bottom: 3px;
+    color: #c2d6f0;
+    font-size: 0.6em;
+}
+
+.modal-lyo-suggestion-content h3 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.modal-lyo-suggestion-content p {
+    margin: 0;
+    color: #c6d7ee;
+    font-size: 0.7em;
+    line-height: 1.5;
+}
+
+/* Botões de ação */
+.modal-lyo-suggestion-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.modal-lyo-suggestion-action:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.modal-lyo-suggestion-action span {
+    color: #fff;
+}
+
+/* Alimentação: amarelo */
+.lyo-alimentacao .modal-lyo-suggestion-icon {
+    color: #ffe19a;
+    background: rgba(255, 193, 65, 0.24);
+}
+
+.lyo-alimentacao .modal-lyo-suggestion-action {
+    background: #e8b746;
+    color: #24324a;
+}
+
+/* Saúde: verde */
+.lyo-saude .modal-lyo-suggestion-icon {
+    color: #8af0c2;
+    background: rgba(56, 205, 145, 0.23);
+}
+
+.lyo-saude .modal-lyo-suggestion-action {
+    background: #42bd8b;
+    color: #073c31;
+}
+
+/* Higiene: azul-ciano */
+.lyo-higiene .modal-lyo-suggestion-icon {
+    color: #8deaff;
+    background: rgba(55, 202, 235, 0.23);
+}
+
+.lyo-higiene .modal-lyo-suggestion-action {
+    background: #55cbea;
+    color: #07344c;
+}
+
+/* Bem-estar: roxo */
+.lyo-bem-estar .modal-lyo-suggestion-icon {
+    color: #d2baff;
+    background: rgba(168, 126, 255, 0.23);
+}
+
+.lyo-bem-estar .modal-lyo-suggestion-action {
+    background: #ae8af4;
+    color: #302054;
+}
+
+/* Entrada do fundo */
+@keyframes lyoOverlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Entrada do modal sem rotação */
+@keyframes lyoModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Movimento contínuo da Lyo após aparecer */
+@keyframes lyoMascotFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(3deg);
+    }
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    .lyo-modal-overlay {
+        padding: 12px;
+    }
+
+    .lyo-modal {
+        padding: 17px;
+        max-height: 90dvh;
+        border-radius: 15px;
+    }
+
+    .lyo-modal-header {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .lyo-modal-mascot {
+        width: 60px;
+        height: 60px;
+    }
+
+    .lyo-modal-heading h2 {
+        font-size: 17px;
+    }
+
+    .lyo-suggestion {
+        flex-wrap: wrap;
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .lyo-suggestion-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lyo-suggestion-content {
+        flex-basis: calc(100% - 50px);
+    }
+
+    .lyo-suggestion-action {
+        margin-left: 45px;
+        padding: 7px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lyo-modal-overlay,
+    .lyo-modal,
+    .lyo-modal-mascot img {
+        animation: none;
+    }
+}

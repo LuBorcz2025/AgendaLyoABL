@@ -29,7 +29,7 @@ const pets: Pet[] = [
     {
         name: "Mel",
         breed: "SRD",
-        src: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=100",
+        src: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200",
     },
 ];
 

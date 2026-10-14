@@ -8,7 +8,11 @@ import {
 import lyo from '../../../assets/lyo-surprise.png';
 import './index.css';
 
-function FirstSection() {
+interface FirstSectionProps {
+    onVerMaisLyo: () => void;
+}
+
+function FirstSection({ onVerMaisLyo }: FirstSectionProps) {
     return (
         <section className="first-section">
 
@@ -56,7 +60,7 @@ function FirstSection() {
                             alt=""
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=100"
+                            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200"
                             alt=""
                         />
                         <span className="more-pets">
@@ -110,6 +114,7 @@ function FirstSection() {
                     <button
                         type="button"
                         className="see-more-button"
+                        onClick={() => onVerMaisLyo()}
                     >
                         Ver mais
                     </button>
