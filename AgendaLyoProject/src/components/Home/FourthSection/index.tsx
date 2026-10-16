@@ -36,6 +36,11 @@ const pets: Pet[] = [
         breed: "Calopsita",
         src: "https://images.unsplash.com/photo-1573048729868-33c6cfcc4b0b?w=800&q=80&auto=format&fit=crop",
     },
+    {
+        name: "Bety",
+        breed: "Dachshund",
+        src: 'https://images.unsplash.com/photo-1653057669545-c8da74f5e198?auto=format&fit=crop&w=200',
+    },
 ];
 
 const pets1: Pet[] = [];
@@ -79,7 +84,7 @@ function FourthSection() {
                         </div>
                     ) : (
                         <>
-                            {pets.slice(0, 4).map((pet) => (
+                            {pets.slice(0, 5).map((pet) => (
                                 <button
                                     type="button"
                                     className={`pet-item ${pet.active ? "active" : ""}`}

@@ -149,6 +149,36 @@ export const sugestoes: Sugestao[] = [
         acao: "Criar lembrete",
         icone: Bubbles,
     },
+    {
+        id: 19,
+        pet: "Bety",
+        titulo: "Vamos cuidar da coluna?",
+        descricao:
+            "Dachshunds têm predisposição a problemas na coluna. Evite saltos de móveis e incentive a Bety a usar rampas adequadas para reduzir impactos.",
+        categoria: "saude",
+        acao: "Ver cuidados",
+        icone: HeartPulse,
+    },
+    {
+        id: 20,
+        pet: "Bety",
+        titulo: "Hora de acompanhar o peso!",
+        descricao:
+            "O excesso de peso aumenta a sobrecarga na coluna da Bety. Acompanhe o peso regularmente e mantenha uma alimentação equilibrada, conforme a orientação veterinária.",
+        categoria: "alimentacao",
+        acao: "Registrar peso",
+        icone: Bone,
+    },
+    {
+        id: 21,
+        pet: "Bety",
+        titulo: "Vamos cuidar das orelhinhas?",
+        descricao:
+            "As orelhas longas da Bety merecem atenção! Confira regularmente se há vermelhidão, mau cheiro ou secreção. Evite introduzir cotonetes no canal auditivo e procure o veterinário se notar alterações.",
+        categoria: "higiene",
+        acao: "Ver cuidados",
+        icone: Bubbles,
+    },
 ];
 
 /** Sorteia `quantidade` sugestões únicas (Fisher-Yates), evitando repetir as já exibidas quando possível. */

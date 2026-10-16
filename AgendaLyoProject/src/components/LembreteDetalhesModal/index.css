@@ -284,13 +284,13 @@
 }
 
 .lembrete-lyo-observacao img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     flex-shrink: 0;
     object-fit: contain;
     animation: lembreteLyoFloat 3s ease-in-out infinite;
     position: absolute;
-    left: -5px;
+    left: 9px;
 }
 
 .lembrete-lyo-conteudo {
@@ -302,13 +302,6 @@
     border: 1px solid rgba(185, 154, 255, 0.35);
     border-radius: 14px;
     margin-left: 120px;
-}
-
-.lembrete-lyo-observacao img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    animation: lembreteLyoFloat 3s ease-in-out infinite;
 }
 
 /* rabinho do balão apontando pra Lyo */
