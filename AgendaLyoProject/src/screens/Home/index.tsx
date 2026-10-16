@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import FirstSection from "../../components/Home/FirstSection";
 import './index.css';
@@ -16,10 +15,8 @@ import LyoHubModal from "../../components/LyoHubModal";
 
 function Home() {
     const firstSectionRef = useRef<HTMLDivElement>(null);
-    const mainRef = useRef<HTMLElement>(null);
     const [mostrarLyo, setMostrarLyo] = useState(false);
     const [lyoModalAberto, setLyoModalAberto] = useState(false);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const section = firstSectionRef.current;
@@ -65,7 +62,7 @@ function Home() {
                 <SecondSection />
                 <ThirdSection />
                 <FourthSection />
-                <FifthSection />
+                <FifthSection onCloseLyoButton={() => setMostrarLyo(false)} onOpenLyoButton={() => setMostrarLyo(true)}/>
             </main>
 
             {mostrarLyo && !lyoModalAberto && (

@@ -1,74 +1,29 @@
 import './index.css';
-
+import { useState, useCallback } from 'react';
 import {
-    HeartPulse,
     CalendarDays,
     Clock3,
     ChevronRight,
     PawPrint,
-    Bone,
-    Bubbles,
     Heart,
 } from 'lucide-react';
+import LembreteDetalhesModal from '../../LembreteDetalhesModal';
+import { type LembreteDetalhes} from './data';
+import { lembretes } from './data';
 
-import type { LucideIcon } from 'lucide-react';
-
-interface Lembrete {
-    id: number;
-    pet: string;
-    raca: string;
-    imagem: string;
-    titulo: string;
-    categoria: string;
-    categoriaClass: string;
-    categoriaIcone: LucideIcon;
-    data: string;
-    prazo: string;
+interface FifthSectionProps {
+    onCloseLyoButton: () => void;
+    onOpenLyoButton: () => void;
 }
 
-const lembretes: Lembrete[] = [
-    {
-        id: 1,
-        pet: 'Mel',
-        raca: 'SRD',
-        imagem:
-            'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200',
-        titulo: 'Consulta agendada',
-        categoria: 'Saúde',
-        categoriaClass: 'saude',
-        categoriaIcone: HeartPulse,
-        data: '25/09',
-        prazo: 'Em 2 dias',
-    },
-    {
-        id: 2,
-        pet: 'Thor',
-        raca: 'Pug',
-        imagem:
-            'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=100',
-        titulo: 'Compra de ração "Prime Cães"',
-        categoria: 'Alimentação',
-        categoriaClass: 'food',
-        categoriaIcone: Bone,
-        data: '30/09',
-        prazo: 'Em 7 dias',
-    },
-    {
-        id: 3,
-        pet: 'Mel',
-        raca: 'SRD',
-        imagem:
-            'https://images.unsplash.com/photo-1558788353-f76d92427f16?w=200',
-        titulo: 'Banho e tosa',
-        categoria: 'Higiene',
-        categoriaClass: 'higiene',
-        categoriaIcone: Bubbles,
-        data: '01/10',
-        prazo: 'Em 8 dias',
-    },
-];
+function FifthSection({ onCloseLyoButton, onOpenLyoButton }: FifthSectionProps) {
 
-function FifthSection() {
+    const [lembreteSelecionado, setLembreteSelecionado] = useState<LembreteDetalhes | null>(null);
+    const fecharModal = useCallback(() => {
+        setLembreteSelecionado(null);
+        onOpenLyoButton();
+    }, [onOpenLyoButton]);
+
     return (
         <section className="fifth-section">
             <div className="section-header">
@@ -143,12 +98,10 @@ function FifthSection() {
                                     type="button"
                                     className="lembrete-botao"
                                     aria-label={`Ver detalhes: ${lembrete.titulo}`}
-                                    onClick={() =>
-                                        console.log(
-                                            'Lembrete selecionado:',
-                                            lembrete
-                                        )
-                                    }
+                                    onClick={(e) => {
+                                        onCloseLyoButton();
+                                        setLembreteSelecionado(lembrete.detalhes);
+                                    }}
                                 >
                                     <ChevronRight
                                         size={18}
@@ -160,6 +113,11 @@ function FifthSection() {
                     );
                 })}
             </div>
+
+            <LembreteDetalhesModal
+                lembrete={lembreteSelecionado}
+                onClose={fecharModal}
+            />
 
             <div className="footer">
                 <PawPrint size={16} fill="currentColor" />
