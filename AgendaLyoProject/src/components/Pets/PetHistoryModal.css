@@ -1,0 +1,319 @@
+.pet-history-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(1, 10, 25, 0.76);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.pet-history-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 760px;
+    max-height: min(82vh, 720px);
+    overflow: hidden;
+    color: #f4f8ff;
+    background: linear-gradient(155deg, #10345f, #071f3d);
+    border: 1px solid rgba(130, 190, 245, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+    animation: petHistoryEnter 0.2s ease;
+}
+
+@keyframes petHistoryEnter {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.pet-history-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 23px 24px;
+    border-bottom: 1px solid rgba(140, 187, 232, 0.16);
+}
+
+.pet-history-modal-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.pet-history-modal-avatar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: #a5d9ff;
+    background: rgba(65, 145, 220, 0.17);
+    border: 1px solid rgba(111, 180, 239, 0.18);
+    border-radius: 14px;
+}
+
+.pet-history-modal-heading>div:last-child {
+    min-width: 0;
+}
+
+.pet-history-modal-heading span {
+    color: #8bcfff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.pet-history-modal-heading h2 {
+    margin: 5px 0 0;
+    overflow-wrap: anywhere;
+    color: #fff;
+    font-size: 21px;
+}
+
+.pet-history-modal-heading p {
+    margin: 5px 0 0;
+    color: #a9c0db;
+    font-size: 12px;
+}
+
+.pet-history-close {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    color: #b6cee8;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(140, 187, 232, 0.15);
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+.pet-history-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.pet-history-modal-body {
+    flex: 1;
+    min-height: 0;
+    padding: 24px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #315d8c transparent;
+}
+
+.pet-history-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-history-record {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(140, 187, 232, 0.12);
+}
+
+.pet-history-record:first-child {
+    padding-top: 0;
+}
+
+.pet-history-record:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.pet-history-record-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+}
+
+.pet-history-record-icon.peso {
+    color: #8ccaff;
+    background: rgba(59, 132, 200, 0.17);
+}
+
+.pet-history-record-icon.vacina {
+    color: #8ce3c2;
+    background: rgba(40, 166, 126, 0.15);
+}
+
+.pet-history-record-icon.consulta {
+    color: #c5adff;
+    background: rgba(139, 101, 218, 0.16);
+}
+
+.pet-history-record-icon.cirurgia {
+    color: #ffd18d;
+    background: rgba(210, 146, 55, 0.15);
+}
+
+.pet-history-record-icon.medicamento {
+    color: #ffb9d1;
+    background: rgba(211, 100, 145, 0.15);
+}
+
+.pet-history-record-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.pet-history-record-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pet-history-record-heading h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: #f2f7ff;
+    font-size: 14px;
+}
+
+.pet-history-record-heading time {
+    flex-shrink: 0;
+    color: #91b1d3;
+    font-size: 11px;
+}
+
+.pet-history-record-content p {
+    margin: 8px 0 0;
+    overflow-wrap: anywhere;
+    color: #c4d7eb;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.pet-history-record-content>span {
+    display: block;
+    margin-top: 5px;
+    overflow-wrap: anywhere;
+    color: #91b1d3;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pet-history-modal-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #8bcfff;
+    text-align: center;
+}
+
+.pet-history-modal-empty h3 {
+    margin: 16px 0 0;
+    color: #f4f8ff;
+    font-size: 18px;
+}
+
+.pet-history-modal-empty p {
+    max-width: 360px;
+    margin: 10px 0 0;
+    color: #a9c0db;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.pet-history-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid rgba(140, 187, 232, 0.16);
+}
+
+.pet-history-modal-footer>span {
+    color: #91b1d3;
+    font-size: 12px;
+}
+
+.pet-history-footer-button {
+    min-height: 38px;
+    padding: 0 18px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    background: #1b65aa;
+    border: 1px solid rgba(143, 207, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pet-history-footer-button:hover {
+    background: #247bc5;
+}
+
+@media (max-width: 560px) {
+    .pet-history-overlay {
+        padding: 12px;
+    }
+
+    .pet-history-modal {
+        max-height: 88vh;
+        border-radius: 16px;
+    }
+
+    .pet-history-modal-header {
+        padding: 17px;
+    }
+
+    .pet-history-modal-heading {
+        gap: 10px;
+    }
+
+    .pet-history-modal-heading h2 {
+        font-size: 17px;
+    }
+
+    .pet-history-modal-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pet-history-modal-body {
+        padding: 18px;
+    }
+
+    .pet-history-record-heading {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pet-history-modal-footer {
+        padding: 14px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pet-history-modal {
+        animation: none;
+    }
+}

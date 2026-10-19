@@ -6,9 +6,7 @@ import {
     Crown,
     Settings,
 } from 'lucide-react';
-
 import './index.css';
-
 import lyoLogo from '../../assets/lyo-happy-edited.png'
 
 const menuItems = [
@@ -18,7 +16,7 @@ const menuItems = [
         icon: House,
     },
     {
-        label: 'Notificações',
+        label: 'Lembretes',
         path: '/notificacoes',
         icon: Bell,
     },
@@ -28,7 +26,7 @@ const menuItems = [
         icon: PawPrint,
     },
     {
-        label: 'Lembretes',
+        label: 'Premium',
         path: '/lembretes',
         icon: Crown,
     },

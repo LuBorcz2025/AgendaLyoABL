@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './screens/Login/index.js';
 import CadastroUsuario from './screens/CadastroUsuario/index.js';
 import Home from './screens/Home/index.js';
+import Pets from './screens/Pets/index.js';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/pets" element={<Pets />} />
       </Routes>
     </BrowserRouter>
   )

@@ -48,7 +48,7 @@ const pets1: Pet[] = [];
 function FourthSection() {
     return (
         <section className="fourth-section" >
-            <article className="pet-card">
+            <article className="pet-card-fourth">
                 <div className="header-card-pet">
                     <div className="header-title-pet">
                         <PawPrint size={20} strokeWidth={2.5} />
@@ -86,21 +86,32 @@ function FourthSection() {
                         <>
                             {pets.slice(0, 5).map((pet) => (
                                 <button
-                                    type="button"
-                                    className={`pet-item ${pet.active ? "active" : ""}`}
                                     key={pet.name}
-                                >
-                                    <div className="pet-image-wrapper">
-                                        <img
-                                            src={pet.src}
-                                            alt={pet.name}
-                                            className="pet-image"
-                                        />
-                                        <span className="pet-status" />
-                                    </div>
+                                    type="button"
+                                    className="pet-avatar-item"
 
-                                    <strong>{pet.name}</strong>
-                                    <span>{pet.breed}</span>
+                                >
+                                    <span className="pet-avatar-wrapper">
+                                        {pet.src ? (
+                                            <img
+                                                src={pet.src}
+                                                alt=""
+                                                className="pet-avatar-image"
+                                            />
+                                        ) : (
+                                            <span className="pet-avatar-placeholder">
+                                                <PawPrint size={32} />
+                                            </span>
+                                        )}
+
+
+                                    </span>
+
+                                    <span className="pet-avatar-name">{pet.name}</span>
+
+                                    <span className="pet-avatar-breed">
+                                        {pet.breed}
+                                    </span>
                                 </button>
                             ))}
 
