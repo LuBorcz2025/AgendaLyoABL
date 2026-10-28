@@ -5,11 +5,13 @@ import {
     PawPrint,
     Crown,
     Settings,
+    LogOut 
 } from 'lucide-react';
 import './index.css';
 import lyoLogo from '../../assets/lyo-happy-edited.png'
 import PremiumModal from '../PremiumModal';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const menuItems = [
     {
@@ -35,6 +37,7 @@ const menuItems = [
 ];
 
 function Sidebar() {
+    const navigate = useNavigate();
 
     const [modalOpen, setModalOpen] = useState(false);
     const [funcionalidade, setFuncionalidade] = useState("");
@@ -118,6 +121,14 @@ function Sidebar() {
                             src="https://i.pravatar.cc/100?img=47"
                             alt="Perfil"
                         />
+                    </button>
+                    <button
+                        type="button"
+                        className="sidebar-logout"
+                        title="Sair"
+                        onClick={() => {navigate("/login")}}
+                    >
+                        <LogOut size={22} strokeWidth={1.8} />
                     </button>
                 </div>
             </aside>

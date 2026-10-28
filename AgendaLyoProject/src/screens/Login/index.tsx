@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import AnimatedBackground from '../../components/AnimatedBackground';
 import { useState, useEffect } from 'react';
 import lyo from '../../assets/lyo-happy-edited.png';
+import LoginErrorModal from '../../components/LoginErrorModal';
 
 interface Usuario {
     email: string;
@@ -17,12 +18,17 @@ function Login() {
     const [senha, setSenha] = useState('');
     const [mostrarSenha, setMostrarSenha] = useState(false);
 
-    function handleSubmit() {
+    const [erroLogin, setErroLogin] = useState("");
+    const [modalErroAberto, setModalErroAberto] = useState(false);
+
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
 
         const emailNormalizado = usuario.trim().toLowerCase();
 
         if (!emailNormalizado || !senha) {
-            alert("Digite o seu e-mail e a sua senha.");
+            setErroLogin("Digite o seu e-mail e a sua senha.");
+            setModalErroAberto(true);
             return;
         }
 
@@ -36,21 +42,16 @@ function Login() {
                 item.senha === senha
         );
 
-        if (usuarioEncontrado) {
-            navigate("/home");
-            return;
-        }
-
-        // Mantém o usuário de teste que já existia.
         if (
-            emailNormalizado === "lu@gmail.com" &&
-            senha === "dev123"
+            usuarioEncontrado ||
+            (emailNormalizado === "lu@gmail.com" && senha === "dev123")
         ) {
             navigate("/home");
             return;
         }
 
-        alert("E-mail ou senha incorretos.");
+        setErroLogin("E-mail ou senha incorretos.");
+        setModalErroAberto(true);
     }
 
     useEffect(() => {
@@ -162,6 +163,12 @@ function Login() {
                     Ainda não tenho uma conta
                 </Link>
             </form>
+
+            <LoginErrorModal
+                isOpen={modalErroAberto}
+                mensagem={erroLogin}
+                onClose={() => setModalErroAberto(false)}
+            />
         </div>
     );
 };

@@ -1,0 +1,131 @@
+.login-error-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    background: rgba(3, 15, 40, 0.65);
+    backdrop-filter: blur(5px);
+
+    animation: login-overlay-in 0.2s ease;
+}
+
+.login-error-modal {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    padding: 40px 26px 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(145deg, #0d3a75, #0b346d);
+    border: 2px solid rgba(100, 172, 245, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+
+    animation: login-modal-in 0.25s ease;
+}
+
+.login-error-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #78879a;
+
+    cursor: pointer;
+}
+
+.login-error-close:hover {
+    background: #52bcf0;
+    color: #fcfcfc;
+}
+
+.login-error-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #fff0ef;
+    color: #e05252;
+}
+
+.login-error-modal h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.login-error-modal p {
+    margin: 0 0 24px;
+    color: #a8b0b9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.login-error-button {
+    width: 100%;
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 12px;
+    background: #2bace7;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.login-error-button:hover {
+    background: #20a1e2;
+    transform: translateY(-1px);
+}
+
+@keyframes login-overlay-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes login-modal-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
