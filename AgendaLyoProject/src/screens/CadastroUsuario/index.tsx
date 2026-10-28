@@ -1,7 +1,7 @@
 import './index.css';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AnimatedBackground from '../../components/AnimatedBackground';
 import lyo from '../../assets/lyo-purple-star.png';
 import lyo2 from '../../assets/lyo-glasses.png';
@@ -12,7 +12,14 @@ const ESTADOS = [
     'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO',
 ];
 
+interface Usuario {
+    email: string;
+    senha: string;
+}
+
 export default function CadastroUsuario() {
+    const navigate = useNavigate();
+
     // Controla em qual etapa o formulário está: 1 (dados pessoais) ou 2 (acesso)
     const [etapa, setEtapa] = useState(1);
     const [mostrarSenha, setMostrarSenha] = useState(false);
@@ -41,16 +48,50 @@ export default function CadastroUsuario() {
         setEtapa(1);
     }
 
-    function handleSubmit(e: FormEvent) {
-        e.preventDefault();
+    function handleCadastro() {
+        const emailNormalizado = email.trim().toLowerCase();
 
-        if (senha !== confirmarSenha) {
-            // TODO: trocar por uma mensagem de erro no próprio formulário
-            alert('As senhas não coincidem');
+        if (!emailNormalizado || !senha || !confirmarSenha) {
+            alert("Preencha o e-mail, a senha e a confirmação.");
             return;
         }
 
-        // TODO: chamar sua API de cadastro com os dados das duas etapas
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem.");
+            return;
+        }
+
+        if (senha.length < 6) {
+            alert("A senha deve ter pelo menos 6 caracteres.");
+            return;
+        }
+
+        const usuarios: Usuario[] = JSON.parse(
+            localStorage.getItem("lyoUsuarios") || "[]"
+        );
+
+        const emailExistente = usuarios.some(
+            (usuario) => usuario.email === emailNormalizado
+        );
+
+        if (emailExistente) {
+            alert("Este e-mail já está cadastrado.");
+            return;
+        }
+
+        usuarios.push({
+            email: emailNormalizado,
+            senha,
+        });
+
+        localStorage.setItem("lyoUsuarios", JSON.stringify(usuarios));
+
+        navigate("/login", {
+            state: {
+                email: emailNormalizado,
+                senha,
+            },
+        });
     }
 
     const mensagemLyo =
@@ -76,7 +117,7 @@ export default function CadastroUsuario() {
 
             <form
                 className="cadastro-usuario"
-                onSubmit={etapa === 1 ? irParaEtapa2 : handleSubmit}
+                onSubmit={etapa === 1 ? irParaEtapa2 : handleCadastro}
             >
                 <h1>Cadastro</h1>
 
@@ -278,9 +319,13 @@ export default function CadastroUsuario() {
                             <button type="button" className="cadastro-usuario-voltar" onClick={voltarParaEtapa1}>
                                 Voltar
                             </button>
-                            <Link to="/login" className="cadastro-usuario-submit">
+                            <button
+                                type="button"
+                                className="cadastro-usuario-submit"
+                                onClick={handleCadastro}
+                            >
                                 Cadastrar
-                            </Link>
+                            </button>
                         </div>
                     </>
                 )}

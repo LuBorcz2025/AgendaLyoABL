@@ -9,7 +9,9 @@ import { PetProfile } from "../../components/Pets/PetProfile";
 import { PetHistoryModal } from "../../components/Pets/PetHistoryModal";
 import Sidebar from "../../components/Sidebar";
 import PetBackground from "../../components/PetBackground";
+import PremiumModal from "../../components/PremiumModal";
 import "./index.css";
+import lyo from '../../assets/lyo-start.png';
 
 interface PetsProps {
     onAddPet?: () => void;
@@ -20,6 +22,9 @@ export default function Pets({
     onAddPet,
     onEditPet,
 }: PetsProps) {
+
+    const [premiumModalOpen, setPremiumModalOpen] = useState(false);
+
     const [pets, setPets] = useState<Pet[]>(() =>
         petsMock.map((pet) => ({ ...pet }))
     );
@@ -113,13 +118,7 @@ export default function Pets({
                     <button
                         type="button"
                         className="pets-add-button"
-                        onClick={() =>
-                            onAddPet
-                                ? onAddPet()
-                                : window.alert(
-                                    "O formulário de cadastro será conectado na próxima etapa."
-                                )
-                        }
+                        onClick={() => setPremiumModalOpen(true)}
                     >
                         <Plus size={20} />
                         Adicionar pet
@@ -212,6 +211,14 @@ export default function Pets({
                 <PetHistoryModal
                     pet={petHistorico}
                     onClose={() => setPetHistorico(null)}
+                />
+
+                <PremiumModal
+                    isOpen={premiumModalOpen}
+                    funcionalidade="Cadastrar Pet"
+                    imagemLyo={lyo}
+                    onClose={() => setPremiumModalOpen(false)}
+                    isPremium={true}
                 />
             </main>
         </div>

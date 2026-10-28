@@ -1,32 +1,73 @@
 import './index.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import AnimatedBackground from '../../components/AnimatedBackground';
-import type { FormEvent } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import lyo from '../../assets/lyo-happy-edited.png';
+
+interface Usuario {
+    email: string;
+    senha: string;
+}
 
 function Login() {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
     const [mostrarSenha, setMostrarSenha] = useState(false);
 
-    function handleSubmit(e: FormEvent) {
-        e.preventDefault();
-        // TODO: chamar sua API de login com usuario e senha
-        if (usuario === "lu@gmail.com" && senha === "dev123") {
-            navigate('/home');
+    function handleSubmit() {
+
+        const emailNormalizado = usuario.trim().toLowerCase();
+
+        if (!emailNormalizado || !senha) {
+            alert("Digite o seu e-mail e a sua senha.");
             return;
         }
 
-        if (usuario === "" && senha === "") {
-            alert('Digite o seu e-mail e a sua senha.')
+        const usuarios: Usuario[] = JSON.parse(
+            localStorage.getItem("lyoUsuarios") || "[]"
+        );
+
+        const usuarioEncontrado = usuarios.find(
+            (item) =>
+                item.email === emailNormalizado &&
+                item.senha === senha
+        );
+
+        if (usuarioEncontrado) {
+            navigate("/home");
             return;
         }
 
-        alert('E-mail ou senha incorretos.');
+        // Mantém o usuário de teste que já existia.
+        if (
+            emailNormalizado === "lu@gmail.com" &&
+            senha === "dev123"
+        ) {
+            navigate("/home");
+            return;
+        }
+
+        alert("E-mail ou senha incorretos.");
     }
+
+    useEffect(() => {
+        const dadosCadastro = location.state;
+
+        if (dadosCadastro?.email) {
+            setUsuario(dadosCadastro.email);
+            setSenha(dadosCadastro.senha ?? "");
+
+            // Limpa o estado de navegação para evitar
+            // reaplicar os dados ao voltar para esta rota.
+            navigate(location.pathname, {
+                replace: true,
+                state: null,
+            });
+        }
+    }, [location.pathname, location.state, navigate]);
 
     return (
         <div className="login-page">

@@ -50,7 +50,7 @@ function Home() {
                         <PawPrint size={28} strokeWidth={1.8} fill="currentColor" />
                     </div>
                     <div className="header-texts">
-                        <h1 className="home-header-title">Olá, Luiza!</h1>
+                        <h1 className="home-header-title">Olá, Usuário!</h1>
                         <p className="home-header-text">Veja como seus pets estão hoje.</p>
                     </div>
                 </header>

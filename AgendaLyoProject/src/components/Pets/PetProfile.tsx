@@ -13,8 +13,10 @@ import {
     Scissors,
     Palette,
 } from "lucide-react";
-
+import PremiumModal from "../PremiumModal";
 import type { Pet } from "./petsMock";
+import { useState } from "react";
+import lyo from '../../assets/lyo-purple-star.png';
 
 interface PetProfileProps {
     pet: Pet;
@@ -103,6 +105,9 @@ export function PetProfile({
         pet.historicoConsultas.length +
         pet.historicoCirurgiasRegistros.length +
         pet.historicoMedicamentos.length;
+
+    const [premiumModalOpen, setPremiumModalOpen] = useState(false);
+    const [premiumModalOpen2, setPremiumModalOpen2] = useState(false);
 
     return (
         <article className="pet-profile">
@@ -264,7 +269,7 @@ export function PetProfile({
                         <button
                             type="button"
                             className="pet-profile-action edit"
-                            onClick={() => onEdit(pet)}
+                            onClick={() => setPremiumModalOpen(true)}
                         >
                             <Pencil size={17} />
                             Editar pet
@@ -273,7 +278,7 @@ export function PetProfile({
                         <button
                             type="button"
                             className="pet-profile-action delete"
-                            onClick={() => onDelete(pet)}
+                            onClick={() => setPremiumModalOpen2(true)}
                         >
                             <Trash2 size={17} />
                             Excluir pet
@@ -286,6 +291,22 @@ export function PetProfile({
                 <span>Cadastrado em {formatarData(pet.createdAt)}</span>
                 <span>Atualizado em {formatarData(pet.updatedAt)}</span>
             </footer>
+
+            <PremiumModal
+                isOpen={premiumModalOpen}
+                funcionalidade="Editar"
+                imagemLyo={lyo}
+                onClose={() => setPremiumModalOpen(false)}
+                isPremium={true}
+            />
+
+            <PremiumModal
+                isOpen={premiumModalOpen2}
+                funcionalidade="Excluir"
+                imagemLyo={lyo}
+                onClose={() => setPremiumModalOpen2(false)}
+                isPremium={true}
+            />
         </article>
     );
 }

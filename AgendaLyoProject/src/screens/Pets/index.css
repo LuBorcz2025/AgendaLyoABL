@@ -296,10 +296,10 @@
     width: 100%;
     min-width: 0;
     padding: 24px;
-    background: linear-gradient(145deg, #102f55, #0a2444);
-    border: 1px solid rgba(106, 183, 244, 0.3);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 12, 30, 0.13);
+    background: linear-gradient(145deg, #0d3a75, #0b346d);
+    border: 2px solid rgba(100, 172, 245, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
     animation: petProfileEnter 0.2s ease;
 }
 

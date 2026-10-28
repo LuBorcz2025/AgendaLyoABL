@@ -6,6 +6,8 @@ import {
 } from "lucide-react";
 import { Link } from 'react-router-dom';
 import lyo from '../../../assets/lyo-question-face-2.png'
+import PremiumModal from '../../PremiumModal';
+import { useState } from "react";
 
 type Pet = {
     name: string;
@@ -46,6 +48,8 @@ const pets: Pet[] = [
 const pets1: Pet[] = [];
 
 function FourthSection() {
+    const [premiumModalOpen, setPremiumModalOpen] = useState(false);
+
     return (
         <section className="fourth-section" >
             <article className="pet-card-fourth">
@@ -57,7 +61,7 @@ function FourthSection() {
 
                     <div className="header-title-pet">
                         <Link
-                            to="/login"
+                            to="/pets"
                             className="see-all-button"
                         >
                             Mais detalhes
@@ -115,18 +119,26 @@ function FourthSection() {
                                 </button>
                             ))}
 
-                            <Link to="/login" className="add-pet">
+                            <button type='button' className="add-pet" onClick={() => setPremiumModalOpen(true)}>
                                 <div className="add-pet-circle">
                                     <Plus size={22} strokeWidth={1.4} />
                                 </div>
 
                                 <strong>Adicionar pet</strong>
                                 <span>Novo perfil</span>
-                            </Link>
+                            </button>
                         </>
                     )}
                 </div>
             </article>
+
+            <PremiumModal
+                isOpen={premiumModalOpen}
+                funcionalidade="Cadastrar Pet"
+                imagemLyo={lyo}
+                onClose={() => setPremiumModalOpen(false)}
+                isPremium={false}
+            />
         </section>
     )
 }

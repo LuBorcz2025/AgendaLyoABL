@@ -7,12 +7,18 @@ import {
 } from 'lucide-react';
 import lyo from '../../../assets/lyo-surprise.png';
 import './index.css';
+import PremiumModal from '../../PremiumModal';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface FirstSectionProps {
     onVerMaisLyo: () => void;
 }
 
 function FirstSection({ onVerMaisLyo }: FirstSectionProps) {
+    const [premiumModalOpen, setPremiumModalOpen] = useState(false);
+    const navigate = useNavigate();
+
     return (
         <section className="first-section">
 
@@ -68,7 +74,7 @@ function FirstSection({ onVerMaisLyo }: FirstSectionProps) {
                         </span>
                     </div>
 
-                    <button type="button" className="view-all-button">
+                    <button type="button" className="view-all-button" onClick={() => {navigate("/pets")}}>
                         Ver todos
                     </button>
                 </div>
@@ -122,12 +128,20 @@ function FirstSection({ onVerMaisLyo }: FirstSectionProps) {
                     <div className="talk-lyo-field">
                         <span>Converse com Lyo</span>
 
-                        <div className="locked-icon" aria-label="Conversa protegida">
+                        <button className="locked-icon" type="button" onClick={() => setPremiumModalOpen(true)}>
                             <Lock size={16} />
-                        </div>
+                        </button>
                     </div>
                 </div>
             </article>
+
+            <PremiumModal
+                isOpen={premiumModalOpen}
+                funcionalidade="Conversar com a Lyo"
+                imagemLyo={lyo}
+                onClose={() => setPremiumModalOpen(false)}
+                isPremium={true}
+            />
         </section>
     );
 }

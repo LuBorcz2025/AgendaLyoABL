@@ -8,6 +8,7 @@ import {
 import "./index.css";
 import lyo from "../../assets/lyo-happy-edited.png";
 import { sortearSugestoes, type Sugestao } from "./sugestoes";
+import PremiumModal from "../PremiumModal";
 
 export interface LyoHubModalProps {
     isOpen: boolean;
@@ -18,6 +19,8 @@ export default function LyoHubModal({
     isOpen,
     onClose,
 }: LyoHubModalProps) {
+
+    const [premiumModalOpen, setPremiumModalOpen] = useState(false);
 
     const [sugestoesExibidas, setSugestoesExibidas] = useState<Sugestao[]>(() =>
         sortearSugestoes(4),
@@ -48,6 +51,8 @@ export default function LyoHubModal({
     }, [isOpen, onClose]);
 
     if (!isOpen) return null;
+
+    
 
     return (
         <div
@@ -124,10 +129,7 @@ export default function LyoHubModal({
                                 <button
                                     type="button"
                                     className="modal-lyo-suggestion-action"
-                                    onClick={() => {
-                                        // As ações serão conectadas às telas
-                                        // correspondentes posteriormente.
-                                    }}
+                                    onClick={() => setPremiumModalOpen(true)}
                                 >
                                     <span>{sugestao.acao}</span>
                                     <Lock size={14} strokeWidth={2.5} color="#fff" />
@@ -137,6 +139,14 @@ export default function LyoHubModal({
                     })}
                 </div>
             </section>
+
+            <PremiumModal
+                isOpen={premiumModalOpen}
+                funcionalidade="Interação Inteligente"
+                imagemLyo={lyo}
+                onClose={() => setPremiumModalOpen(false)}
+                isPremium={true}
+            />
         </div>
     );
 }
