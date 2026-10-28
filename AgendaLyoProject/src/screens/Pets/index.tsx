@@ -19,7 +19,7 @@ interface PetsProps {
 }
 
 export default function Pets({
-    onAddPet,
+    //onAddPet,
     onEditPet,
 }: PetsProps) {
 

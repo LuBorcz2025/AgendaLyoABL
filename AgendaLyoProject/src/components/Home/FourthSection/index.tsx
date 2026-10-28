@@ -45,7 +45,7 @@ const pets: Pet[] = [
     },
 ];
 
-const pets1: Pet[] = [];
+//const pets1: Pet[] = [];
 
 function FourthSection() {
     const [premiumModalOpen, setPremiumModalOpen] = useState(false);

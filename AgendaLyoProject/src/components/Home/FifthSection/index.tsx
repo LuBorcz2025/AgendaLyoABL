@@ -98,7 +98,7 @@ function FifthSection({ onCloseLyoButton, onOpenLyoButton }: FifthSectionProps) 
                                     type="button"
                                     className="lembrete-botao"
                                     aria-label={`Ver detalhes: ${lembrete.titulo}`}
-                                    onClick={(e) => {
+                                    onClick={() => {
                                         onCloseLyoButton();
                                         setLembreteSelecionado(lembrete.detalhes);
                                     }}

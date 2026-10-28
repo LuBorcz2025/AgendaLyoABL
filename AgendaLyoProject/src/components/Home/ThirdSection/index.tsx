@@ -8,7 +8,6 @@ import {
     Sparkles,
     LockKeyhole,
 } from "lucide-react";
-import { Link } from 'react-router-dom';
 import PremiumModal from '../../PremiumModal';
 import { useState } from "react";
 import lyo from '../../../assets/lyo-purple-star.png'

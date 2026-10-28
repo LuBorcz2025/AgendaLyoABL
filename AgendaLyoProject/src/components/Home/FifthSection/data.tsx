@@ -5,10 +5,10 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-import lyoGlasses from '../../../assets/lyo-glasses.png';
-import lyoHappy from '../../../assets/lyo-happy-edited.png';
+//import lyoGlasses from '../../../assets/lyo-glasses.png';
+//import lyoHappy from '../../../assets/lyo-happy-edited.png';
 import lyoPurpleStar from '../../../assets/lyo-purple-star.png';
-import lyoQuestion from '../../../assets/lyo-question-face-2.png';
+//import lyoQuestion from '../../../assets/lyo-question-face-2.png';
 import lyoSurprise from '../../../assets/lyo-surprise.png';
 
 export interface LembreteDetalhes {

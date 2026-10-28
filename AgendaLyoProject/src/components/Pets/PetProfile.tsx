@@ -95,8 +95,8 @@ function Info({
 
 export function PetProfile({
     pet,
-    onEdit,
-    onDelete,
+    ///onEdit,
+    //onDelete,
     onShowHistory,
 }: PetProfileProps) {
     const totalHistorico =
