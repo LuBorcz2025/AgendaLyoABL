@@ -1,6 +1,6 @@
 
 import { useMemo, useState } from "react";
-import { PawPrint, Plus, Search, SlidersHorizontal } from "lucide-react";
+import { PawPrint, Plus, Search, SlidersHorizontal, MessageSquareHeart  } from "lucide-react";
 
 import type { Pet } from "../../components/Pets/petsMock";
 import { petsMock } from "../../components/Pets/petsMock";
@@ -220,6 +220,13 @@ export default function Pets({
                     onClose={() => setPremiumModalOpen(false)}
                     isPremium={true}
                 />
+
+                <footer className="pets-footer">
+                    <MessageSquareHeart  size={17} />
+                    <span>
+                        Cada patinha merece todo esse carinho.                    
+                    </span>
+                </footer>
             </main>
         </div>
     );

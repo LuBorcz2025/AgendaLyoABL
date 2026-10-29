@@ -1,5 +1,7 @@
 .pets-page {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .pets-content {
@@ -541,6 +543,23 @@
     margin: 8px 0 0;
     font-size: 13px;
     line-height: 1.6;
+}
+
+/* Footer */
+.pets-footer {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin: auto auto 0;
+    padding: 40px 0 10px;
+    color: #8fa1b8;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* Responsividade */

@@ -8,7 +8,7 @@ import {
     Heart,
 } from 'lucide-react';
 import LembreteDetalhesModal from '../../LembreteDetalhesModal';
-import { type LembreteDetalhes} from './data';
+import { type LembreteDetalhes } from './data';
 import { lembretes } from './data';
 
 interface FifthSectionProps {
@@ -122,7 +122,9 @@ function FifthSection({ onCloseLyoButton, onOpenLyoButton }: FifthSectionProps) 
             <div className="footer">
                 <PawPrint size={16} fill="currentColor" />
                 <h2>Você está cuidando muito bem deles!</h2>
-                <Heart size={16} fill="currentColor" />
+                <div className='footer-heart'>
+                    <Heart size={16} fill="currentColor" />
+                </div>
             </div>
         </section>
     );

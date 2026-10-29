@@ -114,7 +114,7 @@ export function PetProfile({
             <header className="pet-profile-header">
                 <div>
                     <span className="pet-profile-eyebrow">
-                        <PawPrint size={15} />
+                        <PawPrint size={20} fill="currentColor" />
                         PERFIL DO PET
                     </span>
 

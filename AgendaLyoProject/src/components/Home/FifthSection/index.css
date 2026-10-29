@@ -262,3 +262,15 @@
     margin: 0;
     font-weight: 400;
 }
+
+.footer-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #ff9dbb;
+}
+
+.footer-heart svg {
+    display: block;
+}

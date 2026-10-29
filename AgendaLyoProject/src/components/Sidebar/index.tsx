@@ -46,7 +46,7 @@ function Sidebar() {
         setModalOpen(true);
     };
 
-    const itensIndisponiveis = ["/lembretes", "/premium"];
+    const itensIndisponiveis = ["/lembretes"];
 
     return (
         <>
