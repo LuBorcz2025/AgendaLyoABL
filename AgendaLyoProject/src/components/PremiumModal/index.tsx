@@ -48,9 +48,16 @@ export default function PremiumModal({
                     />
                 </div>
 
-                <span className="premium-modal-badge">
-                    ✨ RECURSO PREMIUM
-                </span>
+                {isPremium ? (
+                    <span className="premium-modal-badge">
+                        ✨ RECURSO PREMIUM
+                    </span>
+                ) : (
+                    <span className="premium-modal-badge">
+                        ✨ RECURSO INDISPONÍVEL
+                    </span>
+
+                )}
 
                 {isPremium ? (
                     <h2 id="premium-modal-title">
